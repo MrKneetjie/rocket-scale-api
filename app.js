@@ -7,8 +7,6 @@ const upload = multer();
 
 const app = express();
 
-app.use(bodyParser.json());
-
 const port = 3030;
 
 const BookingsController = require('./controllers/bookings');
@@ -34,8 +32,8 @@ type: ['application/json', 'text/plain']
 
 app.use(errorHandler);
 
-app.get('/api/getBookings', createController(BookingsController.getBots));
-app.post('/api/createBooking', createController(BookingsController.removeBot));
+app.get('/api/getBookings', createController(BookingsController.getBookings));
+app.post('/api/createBooking', createController(BookingsController.createBooking));
 
 
 app.get(['*', '/*'], (req, res) => {
