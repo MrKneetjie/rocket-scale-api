@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 
 module.exports = async () => {
     try {
-        await mongoose.connect('mongodb+srv://david:Mongo001@cluster0.vtaha.mongodb.net/onlybands?retryWrites=true&w=majority');
+        await mongoose.connect('mongodb+srv://david:Mongo001@cluster0.vtaha.mongodb.net/rocketscale?retryWrites=true&w=majority');
 
-        require('./models/post');
+        require('./models/bookings');
     }
     catch (err) {
         console.log(err)
